@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:12.14.0-alpine
 
 RUN apk update && apk add bash && apk add curl && apk add git
 
@@ -8,7 +8,8 @@ COPY . /usr/src
 
 WORKDIR /usr/src
 
-RUN npm run build
+RUN npm i pm2 -g
+RUN yarn install
 
 ENV PATH /usr/src/node_modules/.bin:$PATH
 

@@ -19,3 +19,4 @@ function doProPlayers(cb) {
   });
 }
 invokeInterval(doProPlayers, 30 * 60 * 1000);
+// doProPlayers();
